@@ -16,6 +16,9 @@
     --cf-font-weight: 400;
     --cf-line-height: 1.5rem;
     --cf-title-color: var(--cf-dark-color);
+    --cf-formfocus-border-color: (var(--cf-secondary-color));
+    --cf-formfocus-shadow: (var(--cf-primary-color));
+    --cf-formfocus-background-color: (var(--cf-background-color));
 }
 
 /* Element Overrides */
@@ -37,6 +40,51 @@ h1,
     letter-spacing: .1rem;
     color: var(--cf-title-color);
 }
+
+/* Bootstrap Overrides--Button overrides first, then Form overrides
+
+.btn-outline-primary {
+    color: var(--cf-dark-color);
+    border-color: var(--cf-secondary-color) !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:active, 
+.btn-outline-primary:focus {
+        border-color: var(--cf-highlight-color);
+        background-color: var(--cf-secondary-color);
+} 
+
+.btn-primary {
+    color: white !important;
+    background-color: var(--cf-secondary-color) !important;
+    border-color: var(--cf-secondary-color);
+}
+
+.btn-primary:hover {
+    border-color: var(--cf-highlight-color);
+    filter: brightness(1.1) !important;
+}
+
+.btn-primary:active, 
+.btn-primary:visited,
+.btn-primary:focus {
+    filter: brightness(1.1) !important;
+    border-color: var(--cf-primary-color);
+}
+
+
+.form-control, .form-select {
+    background-color: var(--cf-formfocus-background-color);
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--cf-formfocus-background-color);
+    border-color: var(--cf-formfocus-border-color);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px var(--cf-formfocus-shadow);
+}
+*/
+
 
 html,
 body {
@@ -133,7 +181,33 @@ footer {
     flex-shrink: 0;
 }
 
-/* Break Points */
+.footer-cta {
+    border-radius: 15px;
+    background-color: var(--cf-secondary-color);
+    width: 75%;
+}
+
+.footer-main {
+    background-color: var(--cf-dark-color);
+    color: var(--cf-light-color);
+
+}
+
+.socialicons {
+    font-size: 2rem;
+    color: var(--cf-secondary-color);
+}
+
+a.socialicons:hover {
+    color: var(--cf-light-color);
+    opacity: 1;
+}
+
+.footer-bg-cta {
+    background: linear-gradient(to bottom, var(--cf-background-color), var(--cf-background-color) 50%, var(--cf-dark-color) 50%, var(--cf-dark-color) 100%)
+}
+
+/* Break Points-Media Queries */
 @media (min-width: 575.98px) {
     .mainHeader {
         background-image: url("/img/img/PortfolioBGTree_767.png");
