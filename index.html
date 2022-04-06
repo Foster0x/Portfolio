@@ -335,7 +335,6 @@
                 </div>
             </div>
         </section>
-
         <section id="blog" class="section-page">
             <h1>Stuff I write about</h1>
             <p>I try to write on my blog on a regular basis. I think it's important to share knowledge with
@@ -407,7 +406,47 @@
 
         <section id="contact" class="section-page">
             <h1>Let's chat</h1>
+            <form class="row g-3" netlify name="contactForm" data-netlify-recaptcha="true">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 col-md-6 form-group">
+                            <label for="inputFirstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" name="firstName" id="inputFirstName"
+                                placeholder="First name" required>
+                        </div>
+                        <div class="col-12 col-md-6 form-group">
+                            <label for="inputLastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" name="lastName" id="inputLastName"
+                                placeholder="Last name" required>
+                        </div>
+                        <div class="col-12 col-md-6 form-group">
+                            <label for="inputEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email"
+                                required>
+                        </div>
+                        <div class="col-12 col-md-6 form-group">
+                            <label for="inputPhone" class="form-label">Phone (optional)</label>
+                            <input type="tel" class="form-control" name="phone" id="inputPhone" placeholder="Phone">
+                        </div>
+                        <div class="col-12 form-group">
+                            <label for="contactReason" class="form-label">Subject</label>
+                            <input type="text" class="form-control" name="subject" id="inputSubject"
+                                placeholder="Subject">
+                        </div>
+                        <div class="col-12 form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea type="text" class="form-control" name="message" id="message" rows="4"
+                                placeholder="Message"></textarea>
+                        </div>
+                        <div data-netlify-recaptcha="true"></div>
+                        <div class="col-12 d-flex justify-content-left pt-2">
+                            <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </section>
+
     </main>
     <footer></footer>
 
