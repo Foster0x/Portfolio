@@ -19,6 +19,16 @@
     --cf-formfocus-border-color: (var(--cf-secondary-color));
     --cf-formfocus-shadow: (var(--cf-primary-color));
     --cf-formfocus-background-color: (var(--cf-background-color));
+    --cf-nav-toggler-glow: var(--cf-primary-color);
+    --cf-nav-toggler-color: (var(--cf-primary-color));
+}
+
+#mainNav button {
+    border-color: var(--cf-primary-color);
+}
+
+#mainNav {
+    background-color: var(--cf-background-color);
 }
 
 /* Element Overrides */
@@ -39,6 +49,17 @@ h1,
     text-transform: uppercase;
     letter-spacing: .1rem;
     color: var(--cf-title-color);
+}
+
+.navbar-toggler {
+    color: var(--cf-nav-toggler-glow) !important;
+}
+
+.navbar-toggler-icon-cf {
+    color: var(--cf-nav-toggler-color);
+    font-size: 1.5rem;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 /* Bootstrap Overrides--Button overrides first, then Form overrides
