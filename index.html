@@ -820,18 +820,34 @@
         fetch('//sfgenesisblog.herokuapp.com/GetTopXPosts/2')
             .then(response => response.json())
             .then(function (data) {
-                //alert(JSON.stringify(data));
+                //First Blog
                 let title1 = document.querySelector("#blog1 h5.card-title");
                 title1.innerHTML = data[0].title;
+                let abstract1 = blog1.querySelector("p.card-text")
+                abstract1.innerHTML = data[0].abstract;
 
+                //Only needed once
+                let options = {
+                    month: 'short',
+                    day: 'numeric'
+                };
+                let created = new Date(data[0].created).toLocaleDateString("en-us", options);
+
+                let blogDay = document.querySelector("#blog1 div.blog-day");
+                blogDay.innerHTML = created.split(" ")[1];
+                let blogMonth = document.querySelector("#blog1 div.blog-month");
+                blogMonth.innerHTML = created.split(" ")[0];
+
+                //Second Blog
                 let title2 = document.querySelector("#blog2 h5.card-title");
                 title2.innerHTML = data[1].title;
+                let abstract2 = blog2.querySelector("p.card-text")
+                abstract2.innerHTML = data[1].abstract;
 
-                // let abstract1 = blog1.querySelector("p.card-text")
-                // abstract1.innerHTML = data[0].abstract;
-
-                // let abstract2 = blog2.querySelector("p.card-text")
-                // abstract2.innerHTML = data[1].abstract;
+                let blogDays = document.querySelector("#blog2 div.blog-day");
+                blogDays.innerHTML = created.split(" ")[1];
+                let blogMonths = document.querySelector("#blog2 div.blog-month");
+                blogMonths.innerHTML = created.split(" ")[0];
 
                 // let blog1 = document.getElementById("blog1");
                 // let title1 = blog1.querySelector("h5.w-title");
