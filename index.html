@@ -826,7 +826,6 @@
                 let abstract1 = blog1.querySelector("p.card-text")
                 abstract1.innerHTML = data[0].abstract;
 
-                //Only needed once
                 let options = {
                     month: 'short',
                     day: 'numeric'
@@ -844,14 +843,12 @@
                 let abstract2 = blog2.querySelector("p.card-text")
                 abstract2.innerHTML = data[1].abstract;
 
-                let blogDays = document.querySelector("#blog2 div.blog-day");
-                blogDays.innerHTML = created.split(" ")[1];
-                let blogMonths = document.querySelector("#blog2 div.blog-month");
-                blogMonths.innerHTML = created.split(" ")[0];
+                let created2 = new Date(data[1].created).toLocaleDateString("en-us", options);
 
-                // let blog1 = document.getElementById("blog1");
-                // let title1 = blog1.querySelector("h5.w-title");
-                // title1.innerHTML = data[0].title;
+                let blogDays = document.querySelector("#blog2 div.blog-day");
+                blogDays.innerHTML = created2.split(" ")[1];
+                let blogMonths = document.querySelector("#blog2 div.blog-month");
+                blogMonths.innerHTML = created2.split(" ")[0];
             });
     </script>
 </body>
