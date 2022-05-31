@@ -258,9 +258,11 @@
                                 <img src="/img/img/logos/Hundo_200.png">
                             </picture>
                             <div class="hc-content">
-                                <p>The program displays the numbers from 0 to 100. Displays the even numbers in BOLD, odd colors in RED.
+                                <p>The program displays the numbers from 0 to 100. Displays the even numbers in BOLD,
+                                    odd colors in RED.
                                 </p>
-                                <a type="button" class="btn btn-primary" href="https://sfhundo.netlify.app/" target="_blank">Learn More</a>
+                                <a type="button" class="btn btn-primary" href="https://sfhundo.netlify.app/"
+                                    target="_blank">Learn More</a>
                             </div>
                         </div>
                     </div>
@@ -274,7 +276,8 @@
                             </picture>
                             <div class="hc-content">
                                 <p>Checks if a string is a palindrome. A classic interview question built as an app.</p>
-                                <a type="button" class="btn btn-primary" href="https://sftacocat.netlify.app" target="_blank">Learn More</a>
+                                <a type="button" class="btn btn-primary" href="https://sftacocat.netlify.app"
+                                    target="_blank">Learn More</a>
                             </div>
                         </div>
                     </div>
@@ -287,8 +290,10 @@
                                 <img src="/img/img/logos/MyLoanShark_200.png">
                             </picture>
                             <div class="hc-content">
-                                <p>Loan payment calculator. Displays a full amortization schedule for simple interest loans.</p>
-                                <a type="button" class="btn btn-primary" href="https://sfloanshark.netlify.app" target="_blank">Learn More</a>
+                                <p>Loan payment calculator. Displays a full amortization schedule for simple interest
+                                    loans.</p>
+                                <a type="button" class="btn btn-primary" href="https://sfloanshark.netlify.app"
+                                    target="_blank">Learn More</a>
                             </div>
                         </div>
                     </div>
@@ -302,7 +307,8 @@
                             </picture>
                             <div class="hc-content">
                                 <p>Superdog displays event data and stats. Makes great use of local storage.</p>
-                                <a type="button" class="btn btn-primary" href="https://sfsuperdog.netlify.app" target="_blank">Learn More</a>
+                                <a type="button" class="btn btn-primary" href="https://sfsuperdog.netlify.app"
+                                    target="_blank">Learn More</a>
                             </div>
                         </div>
                     </div>
@@ -316,7 +322,8 @@
                             </picture>
                             <div class="hc-content">
                                 <p>The classic interview question with a twist. What if fizz buzz was an app?</p>
-                                <a type="button" class="btn btn-primary" href="https://sffizzbuzz.netlify.app/" target="_blank">Learn More</a>
+                                <a type="button" class="btn btn-primary" href="https://sffizzbuzz.netlify.app/"
+                                    target="_blank">Learn More</a>
                             </div>
                         </div>
                     </div>
@@ -330,7 +337,8 @@
                             </picture>
                             <div class="hc-content">
                                 <p>Reverse a string: a classic interview question.</p>
-                                <a type="button" class="btn btn-primary" href="https://sfreverseastring.netlify.app" target="_blank">Learn More</a>
+                                <a type="button" class="btn btn-primary" href="https://sfreverseastring.netlify.app"
+                                    target="_blank">Learn More</a>
                             </div>
                         </div>
                     </div>
@@ -344,7 +352,7 @@
             </p>
             <div class="d-flex flex-column align-items-center align-items-md-start">
                 <article class="card mb-4 blog-article">
-                    <div class="row g-0 blog-row">
+                    <div id="blog1" class="row g-0 blog-row">
                         <div class="col-md-4 blog-header">
                             <a class="blog-image-link" href="#">
                                 <img src="/img/img/Blog/Blog_FlyingGirl.jpg" class="blog-image" alt="Flying Girl SQL">
@@ -374,7 +382,7 @@
                     </div>
                 </article>
                 <article class="card mb-4 blog-article">
-                    <div class="row g-0 blog-row">
+                    <div id="blog2" class="row g-0 blog-row">
                         <div class="col-md-4 blog-header">
                             <a class="blog-image-link" href="#">
                                 <img src="/img/img/Blog/Blog_CodeTag.jpg" class="blog-image" alt="Code Tag">
@@ -474,7 +482,8 @@
                             <img src="/img/img/typingbgdark.png" height="50" width="150">
                         </div>
                         <div class="col-12 col-md d-flex justify-content-center justify-content-md-end">
-                            <a href="https://www.linkedin.com/in/stephen-foster-775246178/" target="_blank" class="socialicons">
+                            <a href="https://www.linkedin.com/in/stephen-foster-775246178/" target="_blank"
+                                class="socialicons">
                                 <i class="bi bi-linkedin p-2"></i>
                             </a>
                             <a href="https://github.com/Foster0x" target="_blank" class="socialicons">
@@ -800,6 +809,19 @@
                 });
             });
         });
+    </script>
+    <script>
+        //Call Blog Service to get data
+        fetch('//sfgenesisblog.herokuapp.com/GetTopXPosts/2')
+            .then(response => response.json())
+            .then(function (data) {
+                //alert(JSON.stringify(data));
+                let title1 = document.querySelector("#blog1 h5.card-title");
+                title1.innerHTML = data[0].title;
+                
+                let title2 = document.querySelector("#blog2 h5.card-title");
+                title2.innerHTML = data[1].title;
+            });
     </script>
 </body>
 
